@@ -9,5 +9,5 @@ import react from '@vitejs/plugin-react'
 // user/organization root repo.
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio/',
+  base: '/pranjal_portfolio/',
 })
