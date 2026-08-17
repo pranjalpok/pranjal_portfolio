@@ -103,6 +103,12 @@ export default function Hero() {
             </h1>
             <PhotoFrame />
           </div>
+          <a
+            href={`mailto:${profile.email}`}
+            className="font-mono text-sm text-mist-dim hover:text-teal-bright transition-colors mt-2 inline-block"
+          >
+            {profile.email}
+          </a>
           <p className="font-display text-xl sm:text-2xl text-gradient font-medium mt-3">
             {profile.headline}
           </p>
