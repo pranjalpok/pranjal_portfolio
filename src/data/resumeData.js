@@ -175,6 +175,26 @@ export const projects = [
     takeaway:
       "Catalog and lineage tooling pays off exactly when something breaks — the 40% cut in response time came from already knowing what depended on what.",
   },
+  {
+    id: "shuttle-saas",
+    name: "Shuttle SaaS — Workforce-Driven Transportation Optimization",
+    tagline: "An optimization layer that plans employee shuttle routes around who's actually working tomorrow, not the static roster.",
+    tech: ["Route Optimization", "REST API", "Multi-Tenant SaaS", "CSV Ingestion"],
+    problem:
+      "Employers plan shuttle transportation against a static shift roster, so fleets are sized for scheduled headcount instead of real attendance after PTO and call-offs.",
+    built: [
+      "A routing/optimization engine that plans around real expected riders, not the scheduled roster.",
+      "Workforce + fleet data ingestion that resolves PTO/call-off exceptions into actual daily demand.",
+      "A before-vs-after comparison tool — vehicles, cost, coverage, travel time — to prove ROI on a company's existing fleet.",
+    ],
+    architecture: "hasPipeline: false",
+    impact: [
+      "Pre-launch, in active development — building the optimization engine and ROI calculator first.",
+    ],
+    takeaway:
+      "The edge isn't running buses — it's reading the workforce data a company already has and showing exactly how many vehicles they actually need tomorrow.",
+    inProgress: true,
+  },
 ];
 
 // ---------------------------------------------------------------------------

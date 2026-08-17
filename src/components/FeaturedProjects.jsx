@@ -28,7 +28,7 @@ function ProjectCard({ project, index }) {
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <span className="font-mono text-[11px] text-amber-bright uppercase tracking-wider">
-              Case Study {String(index + 1).padStart(2, "0")}
+              {project.inProgress ? "In Progress" : `Case Study ${String(index + 1).padStart(2, "0")}`}
             </span>
             <h3 className="font-display text-2xl font-semibold text-mist-bright mt-2">{project.name}</h3>
             <p className="text-mist-dim text-sm mt-2 max-w-2xl">{project.tagline}</p>
@@ -60,7 +60,9 @@ function ProjectCard({ project, index }) {
             </ul>
           </div>
           <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-wider text-mist-faint mb-2">Quantified impact</h4>
+            <h4 className="font-mono text-[11px] uppercase tracking-wider text-mist-faint mb-2">
+              {project.inProgress ? "Status" : "Quantified impact"}
+            </h4>
             <ul className="space-y-2">
               {project.impact.map((b) => (
                 <li key={b} className="text-mist-bright text-[14px] leading-relaxed flex gap-2">
@@ -95,7 +97,7 @@ export default function FeaturedProjects() {
         <div className="mb-14 max-w-2xl">
           <span className="font-mono text-[11px] text-teal-bright uppercase tracking-wider">Featured projects</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-mist-bright mt-3">
-            Three systems, end to end
+            Systems, end to end
           </h2>
         </div>
         <div className="space-y-8">
