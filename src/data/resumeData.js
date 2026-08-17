@@ -16,9 +16,10 @@ export const profile = {
   email: "pokharelpranjal10@gmail.com",
   github: "https://github.com/pranjalpok",
   linkedin: "https://www.linkedin.com/in/pranjal-pokharel-288636368/",
-  // Drop a headshot at public/profile/photo.jpg and it will appear automatically.
+  // Headshot lives at public/profile/photo.jpg and appears automatically.
   // Until then, a placeholder frame is shown instead.
-  photo: "/profile/photo.jpg",
+  // Relative (no leading slash) so it resolves under Vite's base path (see PhotoFrame in Hero.jsx).
+  photo: "profile/photo.jpg",
   about: [
     "I work at the point where raw data becomes something a stakeholder can act on — a pipeline that lands cleanly, a semantic model that answers the question correctly the first time, a dashboard someone actually opens on a Monday.",
     "At the City of Cincinnati, that has meant standing up the organization's first CI/CD pipeline, migrating legacy SSIS workflows onto Microsoft Fabric with a medallion architecture, and owning 15+ Power BI dashboards end to end — from ingestion through to the KPI a director is looking at. Earlier, as a research assistant at NKU, it meant building PySpark pipelines against 250K+ simulated healthcare records for privacy-preserving ML research.",

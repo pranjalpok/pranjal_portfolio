@@ -8,7 +8,7 @@ function PhotoFrame() {
     return (
       <div className="w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-2xl border border-panel-border overflow-hidden bg-panel flex-shrink-0">
         <img
-          src={profile.photo}
+          src={import.meta.env.BASE_URL + profile.photo}
           alt={profile.name}
           className="w-full h-full object-cover"
           onError={() => setErrored(true)}
