@@ -3,10 +3,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 //
-// IMPORTANT for GitHub Pages: set `base` to "/<your-repo-name>/"
-// (e.g. "/portfolio/") if you deploy to https://<user>.github.io/<repo-name>/.
-// Leave it as "/" if you deploy to a custom domain or a <user>.github.io
-// user/organization root repo.
+// GitHub Pages base path — matches the actual repo name
+// (https://github.com/pranjalpok/pranjal_portfolio), so the deployed site
+// at https://pranjalpok.github.io/pranjal_portfolio/ loads assets correctly.
 export default defineConfig({
   plugins: [react()],
   base: '/pranjal_portfolio/',

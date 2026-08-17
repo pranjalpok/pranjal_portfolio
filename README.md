@@ -9,32 +9,21 @@ should need editing for a normal content update.
 
 ---
 
-## 1. Before you publish — fill in the placeholders
+## 1. Add your photo (optional)
 
-Open `src/data/resumeData.js` and update the `profile` object:
-
-```js
-export const profile = {
-  ...
-  email: "PLACEHOLDER — add contact email",     // ← your real email
-  github: "PLACEHOLDER — add GitHub URL",        // ← your real GitHub profile URL
-  linkedin: "PLACEHOLDER — add LinkedIn URL",     // ← your real LinkedIn URL
-  resumeFile: "/resume/Pranjal_Pokharel_Resume.pdf",
-  ...
-};
-```
-
-Then drop your exported resume PDF into:
+The hero section has a photo frame next to your name. Drop a headshot in as:
 
 ```
-public/resume/Pranjal_Pokharel_Resume.pdf
+public/profile/photo.jpg
 ```
 
-(the "Download Resume" button on the Contact section links to that exact path).
+It'll appear automatically. Until you add one, a dashed "Add photo" placeholder
+is shown instead — nothing breaks if you skip this.
 
-The site will show a small amber notice under the Contact buttons for as long as
-any of the three fields above still say `PLACEHOLDER` — that's your reminder,
-and it disappears automatically once you fill them in.
+Contact info (email, GitHub, LinkedIn) is already filled in in
+`src/data/resumeData.js` under the `profile` object. There is intentionally
+no resume-download button on the site; Contact only exposes Email, GitHub,
+and LinkedIn.
 
 ---
 
@@ -76,18 +65,17 @@ GitHub Actions workflow already included at `.github/workflows/deploy.yml`.
    git push -u origin main
    ```
 
-2. **Set the Vite `base` path** in `vite.config.js` to match your repo name.
-   It currently reads:
+2. **The Vite `base` path** in `vite.config.js` is already set to match this
+   repo's name:
 
    ```js
-   base: '/portfolio/',
+   base: '/pranjal_portfolio/',
    ```
 
-   Change `portfolio` to whatever you actually named the GitHub repo, e.g. if
-   your repo is `github.com/pranjalp/my-site`, set `base: '/my-site/'`.
-   (If you're deploying to a **user/organization root site**, i.e. a repo
-   literally named `<your-username>.github.io`, or to a **custom domain**,
-   set `base: '/'` instead.)
+   If you ever rename the repo, update this to match — it must be
+   `/<your-repo-name>/`. (If you deploy to a **user/organization root site**,
+   i.e. a repo literally named `<your-username>.github.io`, or to a
+   **custom domain**, set `base: '/'` instead.)
 
 3. In the GitHub repo, go to **Settings → Pages**, and under "Build and
    deployment" set **Source** to **"GitHub Actions."**
@@ -133,25 +121,29 @@ src/
     useInView.js               ← scroll-triggered reveal
   components/
     Nav.jsx
-    Hero.jsx                   ← signature animated pipeline diagram
+    Hero.jsx                   ← signature animated pipeline diagram + photo frame
+    ExperienceTimeline.jsx     ← 2nd section on the page
     ByTheNumbers.jsx
     CapabilityArchitecture.jsx
-    FeaturedProjects.jsx       ← case studies for the 3 named projects
     DashboardShowcase.jsx      ← Recharts, all data labeled "Illustrative data"
     ApproachSection.jsx        ← the one other permitted use of the pipeline flow
     BusinessImpact.jsx
-    ExperienceTimeline.jsx
     DeliveryCollaboration.jsx
     About.jsx
-    ResumeContact.jsx
+    FeaturedProjects.jsx       ← case studies for the 3 named projects, last section
+    ResumeContact.jsx          ← Email / GitHub / LinkedIn only, no download
     Footer.jsx
   App.jsx
   main.jsx
   index.css
 public/
   favicon.svg
-  resume/                     ← put your resume PDF here
+  profile/                     ← put your headshot here (photo.jpg)
 ```
+
+Page order: Hero → Experience → By the Numbers → Capabilities → Dashboards →
+Data Engineering Approach → Business Impact → Delivery & Collaboration →
+About → Featured Projects → Contact.
 
 ## 5. A content rule worth keeping
 

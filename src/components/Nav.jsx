@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { profile } from "../data/resumeData";
 
 const LINKS = [
+  { href: "#experience", label: "Experience" },
   { href: "#numbers", label: "Numbers" },
   { href: "#capability", label: "Capabilities" },
-  { href: "#projects", label: "Projects" },
   { href: "#dashboards", label: "Dashboards" },
-  { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 

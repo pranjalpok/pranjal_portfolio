@@ -1,4 +1,34 @@
+import { useState } from "react";
 import { profile, pipelineStages } from "../data/resumeData";
+
+function PhotoFrame() {
+  const [errored, setErrored] = useState(false);
+
+  if (!errored) {
+    return (
+      <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl border border-panel-border overflow-hidden bg-panel flex-shrink-0">
+        <img
+          src={profile.photo}
+          alt={profile.name}
+          className="w-full h-full object-cover"
+          onError={() => setErrored(true)}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl border border-dashed border-panel-border flex flex-col items-center justify-center gap-2 flex-shrink-0 bg-panel/40">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4B5468" strokeWidth="1.4">
+        <circle cx="12" cy="8" r="3.5" />
+        <path d="M4.5 20c1.5-4 4.5-6 7.5-6s6 2 7.5 6" strokeLinecap="round" />
+      </svg>
+      <span className="font-mono text-[10px] text-mist-faint text-center px-2 leading-tight">
+        Add photo
+      </span>
+    </div>
+  );
+}
 
 function PipelineDiagram() {
   return (
@@ -61,38 +91,41 @@ export default function Hero() {
     <section id="top" className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 grid-bg overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink-900/40 to-ink-900 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
-        <div className="max-w-3xl animate-rise">
-          <div className="inline-flex items-center gap-2 font-mono text-[12px] text-teal-bright border border-teal-dim/40 bg-teal/5 rounded-full px-3 py-1 mb-7">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulsedot" />
-            Open to Data Engineering / Analytics Engineering / BI roles
-          </div>
+        <div className="max-w-4xl animate-rise flex flex-col sm:flex-row gap-8 sm:gap-10 items-start">
+          <PhotoFrame />
+          <div>
+            <div className="inline-flex items-center gap-2 font-mono text-[12px] text-teal-bright border border-teal-dim/40 bg-teal/5 rounded-full px-3 py-1 mb-7">
+              <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulsedot" />
+              Open to Data Engineering / Analytics Engineering / BI roles
+            </div>
 
-          <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.2rem] font-semibold tracking-tight text-mist-bright">
-            {profile.name}
-          </h1>
-          <p className="font-display text-xl sm:text-2xl text-gradient font-medium mt-3">
-            {profile.headline}
-          </p>
-          <p className="mt-6 text-lg text-mist max-w-xl leading-relaxed">
-            {profile.valueProp}
-          </p>
+            <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.2rem] font-semibold tracking-tight text-mist-bright">
+              {profile.name}
+            </h1>
+            <p className="font-display text-xl sm:text-2xl text-gradient font-medium mt-3">
+              {profile.headline}
+            </p>
+            <p className="mt-6 text-lg text-mist max-w-xl leading-relaxed">
+              {profile.valueProp}
+            </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 bg-teal text-ink-950 font-medium px-6 py-3 rounded-lg hover:bg-teal-bright transition-colors"
-            >
-              View Projects
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 border border-panel-border text-mist-bright font-medium px-6 py-3 rounded-lg hover:border-amber hover:text-amber-bright transition-colors"
-            >
-              Resume / Contact
-            </a>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 bg-teal text-ink-950 font-medium px-6 py-3 rounded-lg hover:bg-teal-bright transition-colors"
+              >
+                View Projects
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 border border-panel-border text-mist-bright font-medium px-6 py-3 rounded-lg hover:border-amber hover:text-amber-bright transition-colors"
+              >
+                Contact
+              </a>
+            </div>
           </div>
         </div>
 

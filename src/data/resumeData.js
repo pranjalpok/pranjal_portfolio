@@ -13,10 +13,12 @@ export const profile = {
   headline: "Data Engineer, Analyst & BI Developer",
   valueProp:
     "I build the pipelines, models, and dashboards that turn raw operational data into decisions finance, HR, and operations teams actually use.",
-  email: "PLACEHOLDER — add contact email",
-  github: "PLACEHOLDER — add GitHub URL",
-  linkedin: "PLACEHOLDER — add LinkedIn URL",
-  resumeFile: "/resume/Pranjal_Pokharel_Resume.pdf",
+  email: "pokharelpranjal10@gmail.com",
+  github: "https://github.com/pranjalpok",
+  linkedin: "https://www.linkedin.com/in/pranjal-pokharel-288636368/",
+  // Drop a headshot at public/profile/photo.jpg and it will appear automatically.
+  // Until then, a placeholder frame is shown instead.
+  photo: "/profile/photo.jpg",
   about: [
     "I work at the point where raw data becomes something a stakeholder can act on — a pipeline that lands cleanly, a semantic model that answers the question correctly the first time, a dashboard someone actually opens on a Monday.",
     "At the City of Cincinnati, that has meant standing up the organization's first CI/CD pipeline, migrating legacy SSIS workflows onto Microsoft Fabric with a medallion architecture, and owning 15+ Power BI dashboards end to end — from ingestion through to the KPI a director is looking at. Earlier, as a research assistant at NKU, it meant building PySpark pipelines against 250K+ simulated healthcare records for privacy-preserving ML research.",
