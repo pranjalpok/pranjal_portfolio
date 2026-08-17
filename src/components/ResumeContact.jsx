@@ -15,7 +15,7 @@ export default function ResumeContact() {
         <div className="flex flex-wrap items-center justify-center gap-4 mt-9">
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 bg-teal text-ink-950 font-medium px-6 py-3 rounded-lg hover:bg-teal-bright transition-colors"
+            className="inline-flex items-center gap-2 bg-teal text-ink-950 font-medium px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
           >
             Email
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

@@ -2,33 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --c-ink-900: 8 11 20;
+  --c-ink-950: 5 7 16;
+  --c-ink-800: 13 18 32;
+  --c-ink-700: 18 26 44;
+  --c-ink-600: 26 36 56;
+  --c-ink-500: 36 50 80;
+
+  --c-panel: 14 20 36;
+  --c-panel-border: 30 42 68;
+  --c-panel-hover: 20 28 51;
+
+  --c-mist: 196 202 217;
+  --c-mist-bright: 237 239 245;
+  --c-mist-dim: 124 133 156;
+  --c-mist-faint: 75 84 104;
+
+  --c-amber: 232 184 75;
+  --c-amber-bright: 245 204 110;
+  --c-amber-dim: 184 146 58;
+
+  --c-teal: 49 214 192;
+  --c-teal-bright: 92 233 214;
+  --c-teal-dim: 30 156 140;
+
+  --c-grid-line: 255 255 255;
+}
+
+:root[data-theme="light"] {
+  --c-ink-900: 250 250 252;
+  --c-ink-800: 236 238 243;
+  --c-ink-700: 224 227 234;
+  --c-ink-600: 208 212 222;
+  --c-ink-500: 180 186 199;
+
+  --c-panel: 255 255 255;
+  --c-panel-border: 221 225 233;
+  --c-panel-hover: 243 245 249;
+
+  --c-mist: 71 78 94;
+  --c-mist-bright: 17 20 28;
+  --c-mist-dim: 100 108 128;
+  --c-mist-faint: 120 128 145;
+
+  --c-amber-bright: 138 96 10;
+  --c-teal-bright: 8 107 96;
+
+  --c-grid-line: 8 11 20;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #080B14;
-  color: #EDEFF5;
+  background-color: rgb(var(--c-ink-900));
+  color: rgb(var(--c-mist-bright));
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
-  background: #31D6C0;
-  color: #050710;
+  background: rgb(var(--c-teal));
+  color: rgb(var(--c-ink-950));
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #243250 #080B14;
+  scrollbar-color: rgb(var(--c-panel-border)) rgb(var(--c-ink-900));
 }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #080B14; }
-::-webkit-scrollbar-thumb { background: #1E2A44; border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: #31D6C0; }
+::-webkit-scrollbar-track { background: rgb(var(--c-ink-900)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--c-panel-border)); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--c-teal)); }
 
 :focus-visible {
-  outline: 2px solid #31D6C0;
+  outline: 2px solid rgb(var(--c-teal));
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -47,8 +98,8 @@ body {
 
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgb(var(--c-grid-line) / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--c-grid-line) / 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

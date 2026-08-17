@@ -10,7 +10,7 @@ export default function ExperienceTimeline() {
         <div className="mb-14 max-w-2xl">
           <span className="font-mono text-[11px] text-teal-bright uppercase tracking-wider">Experience timeline</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-mist-bright mt-3">
-            Cincinnati &rarr; NKU Research &rarr; Oracle Antiques &rarr; Nepal
+            Experience
           </h2>
         </div>
 

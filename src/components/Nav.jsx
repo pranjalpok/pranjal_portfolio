@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { profile } from "../data/resumeData";
+import useTheme from "../hooks/useTheme";
 
 const LINKS = [
   { href: "#experience", label: "Experience" },
@@ -10,6 +11,39 @@ const LINKS = [
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
+
+function ThemeToggle({ className = "" }) {
+  const [theme, setTheme] = useTheme();
+  const isDark = theme === "dark";
+  return (
+    <button
+      aria-label="Toggle color theme"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={`p-2 rounded-full border border-panel-border text-mist-dim hover:text-teal-bright hover:border-teal transition-colors ${className}`}
+    >
+      {isDark ? (
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.4" />
+          <path
+            d="M8 1.2v1.6M8 13.2v1.6M14.8 8h-1.6M2.8 8H1.2M12.7 3.3l-1.1 1.1M4.4 11.6l-1.1 1.1M12.7 12.7l-1.1-1.1M4.4 4.4L3.3 3.3"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+          />
+        </svg>
+      ) : (
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path
+            d="M13.5 9.3A5.8 5.8 0 016.7 2.5a5.8 5.8 0 106.8 6.8z"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
+    </button>
+  );
+}
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,26 +81,32 @@ export default function Nav() {
           ))}
         </ul>
 
-        <a
-          href="#contact"
-          className="hidden lg:inline-flex items-center gap-2 text-[13px] font-mono px-4 py-2 rounded-full border border-panel-border text-mist-bright hover:border-teal hover:text-teal-bright transition-colors"
-        >
-          Get in touch
-        </a>
+        <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 text-[13px] font-mono px-4 py-2 rounded-full border border-panel-border text-mist-bright hover:border-teal hover:text-teal-bright transition-colors"
+          >
+            Get in touch
+          </a>
+        </div>
 
-        <button
-          aria-label="Toggle menu"
-          onClick={() => setOpen((o) => !o)}
-          className="lg:hidden text-mist-bright p-2"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-            )}
-          </svg>
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setOpen((o) => !o)}
+            className="text-mist-bright p-2"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+              {open ? (
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       {open && (

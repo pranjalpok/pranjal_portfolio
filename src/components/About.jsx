@@ -20,6 +20,20 @@ export default function About() {
 
         <div className="space-y-6">
           <div className="rounded-2xl border border-panel-border bg-panel p-6 shadow-panel">
+            <h3 className="font-mono text-[11px] uppercase tracking-wider text-mist-faint mb-3">Core Languages</h3>
+            <div className="flex flex-wrap gap-2">
+              {["Python", "SQL", "T-SQL", "PySpark", "DAX", "Power Query (M)", "R"].map((lang) => (
+                <span
+                  key={lang}
+                  className="font-mono text-[12px] px-3 py-1.5 rounded-md border border-panel-border text-mist bg-ink-800/60"
+                >
+                  {lang}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-panel-border bg-panel p-6 shadow-panel">
             <h3 className="font-mono text-[11px] uppercase tracking-wider text-mist-faint mb-3">Education</h3>
             <p className="font-display text-lg font-semibold text-mist-bright">{education.school}</p>
             <p className="text-mist-dim text-sm mt-1">{education.location}</p>

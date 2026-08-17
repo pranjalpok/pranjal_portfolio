@@ -179,41 +179,56 @@ export const projects = [
 
 // ---------------------------------------------------------------------------
 // DASHBOARD SHOWCASE — illustrative data only, clearly labeled
-// Structure (SLA compliance, root-cause trend, pipeline monitoring) is
-// grounded in real resume bullets; the numbers plotted are sample data.
+// Two tabs mirror real dashboards owned at the City of Cincinnati / GCWW:
+// a real-time fleet telemetry view (Eventstream, 40+ vehicles) and the
+// enterprise invoice/remittance report ($500M+ tracked). Numbers below
+// are sample data so nothing proprietary is exposed.
 // ---------------------------------------------------------------------------
-export const illustrativePipelineRuns = [
-  { day: "Mon", success: 46, failed: 2 },
-  { day: "Tue", success: 48, failed: 1 },
-  { day: "Wed", success: 44, failed: 4 },
-  { day: "Thu", success: 49, failed: 1 },
-  { day: "Fri", success: 47, failed: 2 },
-  { day: "Sat", success: 50, failed: 0 },
-  { day: "Sun", success: 49, failed: 1 },
+export const fleetKPICards = [
+  { label: "Vehicles online", value: "42", delta: "+2", positive: true },
+  { label: "Avg. speed today", value: "37 mph", delta: "-1.2 mph", positive: true },
+  { label: "60mph+ events", value: "184", delta: "+12%", positive: false },
+  { label: "Active alerts", value: "3", delta: "-2", positive: true },
 ];
 
-export const illustrativeSLATrend = [
-  { month: "Mar", sla: 91 },
-  { month: "Apr", sla: 93 },
-  { month: "May", sla: 90 },
-  { month: "Jun", sla: 95 },
-  { month: "Jul", sla: 97 },
-  { month: "Aug", sla: 98 },
+export const fleetSpeedTrend = [
+  { day: "Mon", avgSpeed: 34, events: 22 },
+  { day: "Tue", avgSpeed: 36, events: 27 },
+  { day: "Wed", avgSpeed: 33, events: 19 },
+  { day: "Thu", avgSpeed: 38, events: 31 },
+  { day: "Fri", avgSpeed: 41, events: 38 },
+  { day: "Sat", avgSpeed: 35, events: 24 },
+  { day: "Sun", avgSpeed: 32, events: 23 },
 ];
 
-export const illustrativeIssuesByOwner = [
-  { owner: "Finance", open: 4, resolved: 22 },
-  { owner: "HR", open: 2, resolved: 15 },
-  { owner: "Procurement", open: 5, resolved: 19 },
-  { owner: "Payroll", open: 1, resolved: 11 },
-  { owner: "Water Quality", open: 3, resolved: 17 },
+export const fleetEventsByDept = [
+  { dept: "Public Works", events: 61 },
+  { dept: "Water Works", events: 44 },
+  { dept: "Fire Support", events: 33 },
+  { dept: "Parks", events: 29 },
+  { dept: "Fleet Ops", events: 17 },
 ];
 
-export const illustrativeKPICards = [
-  { label: "Pipelines run today", value: "312", delta: "+4.2%", positive: true },
-  { label: "SLA compliance", value: "98%", delta: "+1.1 pt", positive: true },
-  { label: "Avg. query time", value: "1.4s", delta: "\u221225%", positive: true },
-  { label: "Open data-quality flags", value: "9", delta: "\u22123", positive: true },
+export const invoiceKPICards = [
+  { label: "Tracked transactions", value: "$500M+", delta: "25 yrs history", positive: true },
+  { label: "Invoices processed", value: "48.6K", delta: "+6.4%", positive: true },
+  { label: "Avg. processing time", value: "1.8 days", delta: "-30%", positive: true },
+  { label: "Exceptions flagged", value: "212", delta: "-18%", positive: true },
+];
+
+export const invoiceVolumeTrend = [
+  { month: "Mar", amount: 38 },
+  { month: "Apr", amount: 44 },
+  { month: "May", amount: 41 },
+  { month: "Jun", amount: 52 },
+  { month: "Jul", amount: 47 },
+  { month: "Aug", amount: 55 },
+];
+
+export const invoiceStatusBreakdown = [
+  { status: "Processed", value: 82 },
+  { status: "Pending", value: 12 },
+  { status: "Exception", value: 6 },
 ];
 
 // ---------------------------------------------------------------------------
@@ -288,7 +303,7 @@ export const impactRows = [
 export const experience = [
   {
     id: "cincinnati",
-    org: "City of Cincinnati",
+    org: "City of Cincinnati – GCWW",
     location: "Cincinnati, OH",
     role: "Data Engineer, Analyst & BI Developer Co-Op",
     start: "Jul 2025",
