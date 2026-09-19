@@ -29,7 +29,6 @@ export default function AboutContact() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={`mailto:${profile.email}`} className="bg-mallard text-white font-medium px-6 py-3 rounded-lg hover:bg-mallard-deep transition-colors">Email</a>
             <a href={profile.linkedin} target="_blank" rel="noreferrer" className="border border-panel-border bg-panel text-ink font-medium px-6 py-3 rounded-lg hover:border-mallard transition-colors">LinkedIn</a>
-            <a href={profile.github} target="_blank" rel="noreferrer" className="border border-panel-border bg-panel text-ink font-medium px-6 py-3 rounded-lg hover:border-mallard transition-colors">GitHub</a>
             <a href={stafftransit.url} target="_blank" rel="noreferrer" className="bg-bill-tint text-[rgb(43_33_24)] font-medium px-6 py-3 rounded-lg hover:brightness-95 transition">StaffTransit ↗</a>
           </div>
           <p className="mt-4 font-mono text-sm text-ink-dim">{profile.email}</p>
