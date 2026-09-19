@@ -1,33 +1,27 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import ExperienceTimeline from "./components/ExperienceTimeline";
-import ByTheNumbers from "./components/ByTheNumbers";
-import CapabilityArchitecture from "./components/CapabilityArchitecture";
-import DashboardShowcase from "./components/DashboardShowcase";
-import ApproachSection from "./components/ApproachSection";
-import BusinessImpact from "./components/BusinessImpact";
-import DeliveryCollaboration from "./components/DeliveryCollaboration";
-import About from "./components/About";
-import FeaturedProjects from "./components/FeaturedProjects";
-import ResumeContact from "./components/ResumeContact";
+import Stats from "./components/Stats";
+import Projects from "./components/Projects";
+import Dashboards from "./components/Dashboards";
+import Skills from "./components/Skills";
+import Sdlc from "./components/Sdlc";
+import Experience from "./components/Experience";
+import AboutContact from "./components/AboutContact";
 import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ink-900 text-mist selection:bg-teal selection:text-ink-950">
+    <div className="min-h-screen bg-page text-ink">
       <Nav />
       <main>
         <Hero />
-        <ExperienceTimeline />
-        <ByTheNumbers />
-        <CapabilityArchitecture />
-        <DashboardShowcase />
-        <ApproachSection />
-        <BusinessImpact />
-        <DeliveryCollaboration />
-        <About />
-        <FeaturedProjects />
-        <ResumeContact />
+        <Stats />
+        <Projects />
+        <Dashboards />
+        <Skills />
+        <Sdlc />
+        <Experience />
+        <AboutContact />
       </main>
       <Footer />
     </div>

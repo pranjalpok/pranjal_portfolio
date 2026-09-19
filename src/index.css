@@ -2,86 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light (default): a mallard — green head, white neck ring, chestnut breast, yellow bill. */
 :root {
-  --c-ink-900: 8 11 20;
-  --c-ink-950: 5 7 16;
-  --c-ink-800: 13 18 32;
-  --c-ink-700: 18 26 44;
-  --c-ink-600: 26 36 56;
-  --c-ink-500: 36 50 80;
-
-  --c-panel: 14 20 36;
-  --c-panel-border: 30 42 68;
-  --c-panel-hover: 20 28 51;
-
-  --c-mist: 196 202 217;
-  --c-mist-bright: 237 239 245;
-  --c-mist-dim: 124 133 156;
-  --c-mist-faint: 75 84 104;
-
-  --c-amber: 232 184 75;
-  --c-amber-bright: 245 204 110;
-  --c-amber-dim: 184 146 58;
-
-  --c-teal: 49 214 192;
-  --c-teal-bright: 92 233 214;
-  --c-teal-dim: 30 156 140;
-
-  --c-grid-line: 255 255 255;
-}
-
-:root[data-theme="light"] {
-  --c-ink-900: 250 250 252;
-  --c-ink-800: 236 238 243;
-  --c-ink-700: 224 227 234;
-  --c-ink-600: 208 212 222;
-  --c-ink-500: 180 186 199;
-
+  --c-page: 251 248 240;        /* warm feather white */
+  --c-sand: 243 237 221;
+  --c-sand-deep: 232 223 200;
   --c-panel: 255 255 255;
-  --c-panel-border: 221 225 233;
-  --c-panel-hover: 243 245 249;
+  --c-panel-border: 226 217 196;
 
-  --c-mist: 71 78 94;
-  --c-mist-bright: 17 20 28;
-  --c-mist-dim: 100 108 128;
-  --c-mist-faint: 120 128 145;
+  --c-ink: 43 33 24;            /* dark brown */
+  --c-ink-soft: 92 75 58;
+  --c-ink-dim: 120 103 86;
 
-  --c-amber-bright: 138 96 10;
-  --c-teal-bright: 8 107 96;
+  --c-mallard: 27 127 75;
+  --c-mallard-deep: 20 92 55;
+  --c-mallard-tint: 27 127 75;
+  --c-bill: 201 149 0;
+  --c-bill-deep: 128 92 0;
+  --c-bill-tint: 240 190 40;
+  --c-wing: 164 80 31;
+  --c-wing-deep: 122 58 22;
+  --c-wing-tint: 164 80 31;
 
-  --c-grid-line: 8 11 20;
+  --c-shadow: 60 40 20;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Dark: the pond at dusk. */
+:root[data-theme="dark"] {
+  --c-page: 22 26 20;
+  --c-sand: 30 35 27;
+  --c-sand-deep: 40 46 36;
+  --c-panel: 30 35 27;
+  --c-panel-border: 56 63 50;
+
+  --c-ink: 244 238 224;
+  --c-ink-soft: 208 200 182;
+  --c-ink-dim: 163 155 137;
+
+  --c-mallard: 63 165 107;
+  --c-mallard-deep: 110 205 150;
+  --c-bill: 212 170 42;
+  --c-bill-deep: 232 196 84;
+  --c-bill-tint: 212 170 42;
+  --c-wing: 192 112 63;
+  --c-wing-deep: 222 150 100;
+
+  --c-shadow: 0 0 0;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: rgb(var(--c-ink-900));
-  color: rgb(var(--c-mist-bright));
+  background-color: rgb(var(--c-page));
+  color: rgb(var(--c-ink));
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-::selection {
-  background: rgb(var(--c-teal));
-  color: rgb(var(--c-ink-950));
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(var(--c-panel-border)) rgb(var(--c-ink-900));
-}
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: rgb(var(--c-ink-900)); }
-::-webkit-scrollbar-thumb { background: rgb(var(--c-panel-border)); border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: rgb(var(--c-teal)); }
+::selection { background: rgb(var(--c-bill-tint) / 0.5); color: rgb(var(--c-ink)); }
 
 :focus-visible {
-  outline: 2px solid rgb(var(--c-teal));
+  outline: 2px solid rgb(var(--c-mallard));
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -96,16 +80,17 @@ body {
 .font-display { font-family: 'Space Grotesk', sans-serif; }
 .font-mono { font-family: 'JetBrains Mono', monospace; }
 
-.grid-bg {
-  background-image:
-    linear-gradient(to right, rgb(var(--c-grid-line) / 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(var(--c-grid-line) / 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
+/* Soft pond-ripple backdrop, used sparingly on hero/contact */
+.ripple-bg {
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 10%, rgb(var(--c-bill-tint) / 0.16), transparent 70%),
+    radial-gradient(ellipse 55% 60% at 0% 100%, rgb(var(--c-mallard) / 0.10), transparent 70%);
 }
 
-.text-gradient {
-  background: linear-gradient(120deg, #F5CC6E 0%, #E8B84B 45%, #31D6C0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--c-mallard-deep));
 }

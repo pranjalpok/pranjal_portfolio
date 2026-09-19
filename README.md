@@ -1,4 +1,4 @@
-# Pranjal Pokharel — Data Engineering & BI Portfolio
+# Pranjal Pokharel — Data Engineer & Full-Stack Portfolio
 
 A static, single-page portfolio built with **React + Vite + Tailwind CSS + Recharts**.
 No backend. Deployable straight to GitHub Pages.
