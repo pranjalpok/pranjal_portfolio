@@ -9,6 +9,8 @@ export const profile = {
   name: "Pranjal Pokharel",
   location: "Santa Rosa, CA",
   headline: "Data Engineer & Full-Stack Developer",
+  // Roles I'm targeting, shown in the hero and contact section
+  roles: "Data Engineer · BI / Data Analyst · Full-Stack Developer",
   valueProp:
     "I build the pipelines, dashboards, and production software that turn raw data into decisions.",
   email: "pokharelpranjal10@gmail.com",

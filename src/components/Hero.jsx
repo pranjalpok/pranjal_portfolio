@@ -44,10 +44,14 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between gap-8 animate-rise">
           <div className="max-w-2xl">
-            <p className="eyebrow">{profile.location} · Open to data engineering &amp; full-stack roles</p>
+            <p className="eyebrow">{profile.location}</p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-ink mt-4">{profile.name}</h1>
             <p className="font-display text-xl sm:text-2xl text-mallard-deep font-medium mt-3">{profile.headline}</p>
             <p className="mt-5 text-lg text-ink-soft leading-relaxed max-w-xl">{profile.valueProp}</p>
+            <p className="mt-4 text-sm text-ink-dim">
+              <span className="inline-block w-2 h-2 rounded-full bg-mallard mr-2 animate-pulsedot" />
+              Open to: <span className="text-ink-soft font-medium">{profile.roles}</span>
+            </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex items-center gap-2 bg-mallard text-white font-medium px-6 py-3 rounded-lg hover:bg-mallard-deep transition-colors">

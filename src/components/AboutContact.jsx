@@ -25,7 +25,7 @@ export default function AboutContact() {
         <div>
           <p className="eyebrow">Contact</p>
           <h2 className="font-display text-3xl font-semibold text-ink mt-2">Let's talk</h2>
-          <p className="mt-5 text-ink-soft">Data engineering, full-stack, or BI roles. Or a chat about StaffTransit.</p>
+          <p className="mt-5 text-ink-soft">Data, BI, or full-stack roles, or a chat about StaffTransit.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={`mailto:${profile.email}`} className="bg-mallard text-white font-medium px-6 py-3 rounded-lg hover:bg-mallard-deep transition-colors">Email</a>
             <a href={profile.linkedin} target="_blank" rel="noreferrer" className="border border-panel-border bg-panel text-ink font-medium px-6 py-3 rounded-lg hover:border-mallard transition-colors">LinkedIn</a>
