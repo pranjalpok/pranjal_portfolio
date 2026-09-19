@@ -72,7 +72,7 @@ function ProjectCard({ p }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 lg:py-24 scroll-mt-16">
+    <section id="projects" className="py-20 lg:py-24 border-t border-panel-border scroll-mt-16">
       <div className="max-w-6xl mx-auto px-6">
         <p className="eyebrow">Projects</p>
         <h2 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-2 mb-10">Things I've built</h2>

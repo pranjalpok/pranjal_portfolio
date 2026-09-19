@@ -16,11 +16,11 @@ export default function App() {
       <main>
         <Hero />
         <Stats />
+        <Experience />
         <Projects />
         <Dashboards />
         <Skills />
         <Sdlc />
-        <Experience />
         <AboutContact />
       </main>
       <Footer />

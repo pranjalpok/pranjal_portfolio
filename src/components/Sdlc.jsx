@@ -2,7 +2,7 @@ import { sdlc } from "../data/resumeData";
 
 export default function Sdlc() {
   return (
-    <section id="sdlc" className="py-20 lg:py-24 bg-sand border-y border-panel-border scroll-mt-16">
+    <section id="sdlc" className="py-20 lg:py-24 border-t border-panel-border scroll-mt-16">
       <div className="max-w-6xl mx-auto px-6">
         <p className="eyebrow">Software lifecycle</p>
         <h2 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-2 mb-10">I own every phase, not just the code</h2>

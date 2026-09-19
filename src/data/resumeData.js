@@ -193,7 +193,7 @@ export const experience = [
 
 export const education = {
   school: "Northern Kentucky University",
-  degree: "B.S. Computer Information Technology, Minor: Computer Science",
+  degree: "Bachelor of Science in Information Technology, Minor: Computer Science",
   detail: "GPA 3.6 · May 2026",
 };
 
