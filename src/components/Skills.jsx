@@ -7,7 +7,7 @@ const TONES = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 lg:py-24 scroll-mt-16">
+    <section id="skills" className="py-20 lg:py-24 border-t border-panel-border scroll-mt-16">
       <div className="max-w-6xl mx-auto px-6">
         <p className="eyebrow">Skills</p>
         <h2 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-2 mb-10">Two lanes, one stack</h2>

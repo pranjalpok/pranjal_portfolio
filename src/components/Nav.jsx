@@ -5,8 +5,8 @@ import Duck from "./Duck";
 
 const LINKS = [
   { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
   { href: "#dashboards", label: "Dashboards" },
+  { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#sdlc", label: "SDLC" },
   { href: "#contact", label: "Contact" },
