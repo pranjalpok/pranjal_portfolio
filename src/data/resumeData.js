@@ -7,7 +7,7 @@
 
 export const profile = {
   name: "Pranjal Pokharel",
-  location: "Cincinnati, OH",
+  location: "Santa Rosa, CA",
   headline: "Data Engineer & Full-Stack Developer",
   valueProp:
     "I build the pipelines, dashboards, and production software that turn raw data into decisions.",
