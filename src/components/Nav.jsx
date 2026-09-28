@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { profile, stafftransit } from "../data/resumeData";
+import { profile, stafftransit, somebdy } from "../data/resumeData";
 import useTheme from "../hooks/useTheme";
 import Duck from "./Duck";
 
@@ -71,6 +71,14 @@ export default function Nav() {
           >
             StaffTransit <span aria-hidden="true">↗</span>
           </a>
+          <a
+            href={somebdy.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-wing text-white hover:brightness-95 transition"
+          >
+            Somebdy <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -90,6 +98,7 @@ export default function Nav() {
               <li key={l.href}><a href={l.href} onClick={() => setOpen(false)}>{l.label}</a></li>
             ))}
             <li><a href={stafftransit.url} target="_blank" rel="noreferrer" className="text-mallard-deep font-medium">StaffTransit ↗</a></li>
+            <li><a href={somebdy.url} target="_blank" rel="noreferrer" className="text-wing-deep font-medium">Somebdy ↗</a></li>
           </ul>
         </div>
       )}
