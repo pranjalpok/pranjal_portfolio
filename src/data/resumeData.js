@@ -1,7 +1,7 @@
 // ============================================================================
 // SINGLE SOURCE OF TRUTH
 // Every claim below traces to Pranjal Pokharel's resume (3 versions) or to the
-// StaffTransit product notes in stafftransit.txt. Nothing is invented.
+// StaffTransit / Somebdy product notes. Nothing is invented.
 // Edit this file to change the site; components hold no content.
 // ============================================================================
 
@@ -18,7 +18,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/pranjal-pokharel-288636368/",
   photo: "profile/photo.jpg", // relative so it resolves under Vite's base path
   about: [
-    "Data engineer by trade, full-stack developer by habit. At the City of Cincinnati I ship pipelines and Power BI dashboards to finance, HR, and operations teams; on my own I'm building StaffTransit, a B2B SaaS product, end to end.",
+    "Data engineer by trade, full-stack developer by habit. At the City of Cincinnati I ship pipelines and Power BI dashboards to finance, HR, and operations teams; on my own I'm building two products end to end: StaffTransit (B2B SaaS) and Somebdy (a consumer social app).",
     "I care about the whole software lifecycle: requirements, design, tests, release, and keeping it running.",
   ],
 };
@@ -26,7 +26,6 @@ export const profile = {
 export const stafftransit = {
   name: "StaffTransit",
   url: "https://stafftransit.com",
-  role: "Founder & Full-Stack Engineer",
   since: "May 2026",
   tagline: "B2B SaaS that optimizes employee shuttle routes around real attendance, not static shift rosters.",
   problem:
@@ -44,6 +43,18 @@ export const stafftransit = {
     "CSV ingestion that flags missing addresses, shift conflicts, and duplicates",
   ],
   tech: ["FastAPI", "PostgreSQL", "Next.js / TypeScript", "OR-Tools", "Celery", "Redis", "OSRM", "Docker"],
+};
+
+export const somebdy = {
+  name: "Somebdy",
+  url: "https://somebdy.netlify.app/",
+  tagline: "A local, TikTok-style feed for doing things with people nearby: pickup games, study groups, favors, and small gigs.",
+  built: [
+    "Mobile-first PWA on Supabase with realtime chat and push notifications",
+    "Trust & safety in the database: row-level security on every table, exact addresses only for confirmed attendees",
+    "AI \"quick fill\" that turns one sentence into a complete post using Claude",
+  ],
+  tech: ["React", "TypeScript", "Tailwind", "Supabase", "Postgres", "Edge Functions", "Claude API", "Cloudflare"],
 };
 
 export const pipelineStages = [
@@ -134,18 +145,6 @@ export const sdlc = [
 // EXPERIENCE — top bullets only
 // ---------------------------------------------------------------------------
 export const experience = [
-  {
-    id: "stafftransit",
-    org: "StaffTransit",
-    role: "Founder & Full-Stack Engineer",
-    dates: "May 2026 – Present",
-    tech: ["FastAPI", "Next.js", "PostgreSQL", "OR-Tools"],
-    bullets: [
-      "Built the multi-tenant SaaS backend, 6-role RBAC, and async optimization pipeline.",
-      "Raised coverage from 10/40 to 36/40 employees on the same 3-vehicle fleet by fixing an optimizer bug.",
-      "Moved routing to self-hosted OSRM, cutting routing costs to $0.",
-    ],
-  },
   {
     id: "cincinnati",
     org: "City of Cincinnati (GCWW)",

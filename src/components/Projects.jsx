@@ -1,4 +1,4 @@
-import { stafftransit as st, projects } from "../data/resumeData";
+import { stafftransit as st, somebdy, projects } from "../data/resumeData";
 
 function Chip({ children, tone = "sand" }) {
   const tones = {
@@ -12,7 +12,7 @@ function StaffTransitCard() {
   return (
     <article className="rounded-3xl border border-mallard/40 bg-panel shadow-panel overflow-hidden">
       <div className="bg-mallard text-white px-6 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3">
-        <span className="font-mono text-xs uppercase tracking-wider">Featured · B2B SaaS · {st.since} – Present</span>
+        <span className="font-mono text-xs uppercase tracking-wider">Building · B2B SaaS · since {st.since}</span>
         <a href={st.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 bg-bill-tint text-[rgb(43_33_24)] text-sm font-medium px-4 py-1.5 rounded-full hover:brightness-95 transition">
           stafftransit.com <span aria-hidden="true">↗</span>
         </a>
@@ -49,6 +49,33 @@ function StaffTransitCard() {
   );
 }
 
+function SomebdyCard() {
+  return (
+    <article className="mt-6 rounded-3xl border border-wing/40 bg-panel shadow-panel overflow-hidden">
+      <div className="bg-wing text-white px-6 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3">
+        <span className="font-mono text-xs uppercase tracking-wider">Building · Consumer app · PWA</span>
+        <a href={somebdy.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 bg-bill-tint text-[rgb(43_33_24)] text-sm font-medium px-4 py-1.5 rounded-full hover:brightness-95 transition">
+          Visit Somebdy <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div className="p-6 sm:p-8">
+        <h3 className="font-display text-3xl font-semibold text-ink">{somebdy.name}</h3>
+        <p className="text-ink-soft mt-2 text-lg">{somebdy.tagline}</p>
+        <ul className="mt-5 space-y-2">
+          {somebdy.built.map((b) => (
+            <li key={b} className="flex gap-2.5 text-[15px] text-ink-soft">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-bill-tint flex-shrink-0" />{b}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {somebdy.tech.map((t) => <Chip key={t}>{t}</Chip>)}
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function ProjectCard({ p }) {
   return (
     <article className="rounded-2xl border border-panel-border bg-panel p-6 shadow-panel flex flex-col">
@@ -77,6 +104,7 @@ export default function Projects() {
         <p className="eyebrow">Projects</p>
         <h2 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-2 mb-10">Things I've built</h2>
         <StaffTransitCard />
+        <SomebdyCard />
         <div className="grid md:grid-cols-3 gap-5 mt-6">
           {projects.map((p) => <ProjectCard key={p.id} p={p} />)}
         </div>
