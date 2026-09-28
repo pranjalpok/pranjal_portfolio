@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { profile, stafftransit, pipelineStages } from "../data/resumeData";
+import { profile, stafftransit, somebdy, pipelineStages } from "../data/resumeData";
 
 function Photo() {
   const [errored, setErrored] = useState(false);
@@ -59,6 +59,9 @@ export default function Hero() {
               </a>
               <a href={stafftransit.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-bill-tint text-[rgb(43_33_24)] font-medium px-6 py-3 rounded-lg hover:brightness-95 transition">
                 Visit StaffTransit <span aria-hidden="true">↗</span>
+              </a>
+              <a href={somebdy.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-wing text-white font-medium px-6 py-3 rounded-lg hover:brightness-95 transition">
+                Visit Somebdy <span aria-hidden="true">↗</span>
               </a>
               <a href="#contact" className="inline-flex items-center gap-2 border border-panel-border bg-panel text-ink font-medium px-6 py-3 rounded-lg hover:border-mallard transition-colors">
                 Contact
