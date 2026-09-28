@@ -5,8 +5,8 @@ function Photo() {
   const [errored, setErrored] = useState(false);
   if (errored) return null;
   return (
-    <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-panel bg-sand shadow-panel ring-2 ring-bill-tint flex-shrink-0">
-      <img src={import.meta.env.BASE_URL + profile.photo} alt={profile.name} className="w-full h-full object-cover" onError={() => setErrored(true)} />
+    <div className="w-28 h-36 sm:w-48 sm:h-64 rounded-2xl overflow-hidden border-4 border-panel bg-sand shadow-panel ring-2 ring-bill-tint flex-shrink-0">
+      <img src={import.meta.env.BASE_URL + profile.photo} alt={profile.name} className="w-full h-full object-cover object-top" onError={() => setErrored(true)} />
     </div>
   );
 }
