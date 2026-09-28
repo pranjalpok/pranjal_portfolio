@@ -16,7 +16,7 @@ export const profile = {
   email: "pokharelpranjal10@gmail.com",
   github: "https://github.com/pranjalpok",
   linkedin: "https://www.linkedin.com/in/pranjal-pokharel-288636368/",
-  photo: "profile/headshot-v2.jpg", // relative so it resolves under Vite's base path
+  photo: "profile/headshot-v3.jpg", // relative so it resolves under Vite's base path
   about: [
     "Data engineer by trade, full-stack developer by habit. At the City of Cincinnati I ship pipelines and Power BI dashboards to finance, HR, and operations teams; on my own I'm building two products end to end: StaffTransit (B2B SaaS) and Somebdy (a consumer social app).",
     "I care about the whole software lifecycle: requirements, design, tests, release, and keeping it running.",
